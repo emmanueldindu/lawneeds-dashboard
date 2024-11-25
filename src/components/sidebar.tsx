@@ -6,10 +6,15 @@ import { usePathname, useRouter } from 'next/navigation'
 import { RefreshCwIcon as Refresh, Database, LogOut } from 'lucide-react'
 // import { useRouter } from 'next/router'
 
-const SidebarLink = ({ href, children, icon: Icon }) => {
-  const pathname = usePathname()
-  const isActive = pathname === href
- 
+interface SidebarLinkProps {
+    href: string;
+    children: React.ReactNode;
+    icon: React.ElementType;
+  }
+  
+  const SidebarLink: React.FC<SidebarLinkProps> = ({ href, children, icon: Icon }) => {
+    const pathname = usePathname()
+    const isActive = pathname === href
 
 
 
